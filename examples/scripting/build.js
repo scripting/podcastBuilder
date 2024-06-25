@@ -9,12 +9,12 @@ const config = {
 		category: ["Technology", "History", "Business", "Education", "Society & Culture", "Arts"],
 		explicit: "no", //other options ore "yes" and "clean"
 		author: "Dave Winer",
-		type: "episodic"
+		type: "episodic" //choices are episodic or serial, episodic is default
 		},
 	image: {
-		url: "http://scripting.com/images/2024/06/17/podcast0image.png",
-		title: "Home on the range",
-		link: "http://somewhere.some"
+		url: "http://scripting.com/images/2024/06/25/scriptingNewsPodcastFullImage.png",
+		title: "Scripting News podcast feed with Dave Winer.",
+		link: "http://scripting.com/"
 		}
 	}
 
