@@ -1,0 +1,12 @@
+{
+	"name": "scripting",
+	"description": "Build the scripting news podcast feed",
+	"version": "0.4.0",
+	"main": "build.js",
+	"dependencies" : {
+		"daveutils": "*",
+		"daves3": "*",
+		"opmltojs": "*",
+		"daverss": "*"
+		}
+	}

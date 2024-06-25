@@ -1,0 +1,21 @@
+{
+	"name": "podcastbuilder",
+	"description": "Turn an outline into a podcast feed",
+	"version": "0.4.0",
+	"main": "podcastbuilder.js",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/scripting/podcastBuilder.git"
+		},
+	"files": [
+		"podcastbuilder.js",
+		"readme.md"
+		],
+	"dependencies" : {
+		"daveutils": "*",
+		"daves3": "*",
+		"opmltojs": "*",
+		"daverss": "*"
+		}
+	}
