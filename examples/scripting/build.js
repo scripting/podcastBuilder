@@ -6,7 +6,7 @@ const config = {
 	s3path: "/scripting.com/podcast.xml",
 	s3ArchivePath: "/scripting.com/podcast/", //6/26/24 by DW
 	rssFeedUrl: "http://scripting.com/podcast.xml",
-	title: "Scripting News podcasts",
+	title: "Scripting News podcast",
 	description: "Podcasts from Dave Winer, editor of the Scripting News blog, since 1994.",
 	link: "https://this.how/scriptingNewsPodcast/",
 	itunes: {
