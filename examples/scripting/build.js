@@ -4,7 +4,11 @@ const podcastbuilder = require ("../../podcastbuilder.js");
 const config = {
 	pathOpmlFile: "/Users/davewiner/Dropbox/portableDave/publicFolder/scripting/blog.opml",
 	s3path: "/scripting.com/podcast.xml",
+	s3ArchivePath: "/scripting.com/podcast/", //6/26/24 by DW
 	rssFeedUrl: "http://scripting.com/podcast.xml",
+	title: "Scripting News podcasts",
+	description: "Podcasts from Dave Winer, editor of the Scripting News blog, since 1994.",
+	link: "https://this.how/scriptingNewsPodcast/",
 	itunes: {
 		category: ["Technology", "History", "Business", "Education", "Society & Culture", "Arts"],
 		explicit: "no", //other options ore "yes" and "clean"
@@ -13,7 +17,7 @@ const config = {
 		},
 	image: {
 		url: "http://scripting.com/images/2024/06/25/scriptingNewsPodcastFullImage.png",
-		title: "Scripting News podcast feed with Dave Winer.",
+		title: "Scripting News podcast with Dave Winer.",
 		link: "http://scripting.com/"
 		}
 	}

@@ -1,4 +1,4 @@
-var myVersion = "0.4.0", myProductName = "podcastbuilder"; 
+var myVersion = "0.4.1", myProductName = "podcastbuilder"; 
 
 exports.build = buildPodcast; 
 
@@ -27,10 +27,13 @@ function readConfig (f, config, callback) {
 		});
 	}
 function outlineToFeed (theOutline, config) {
+	const title = (config.title === undefined) ? theOutline.opml.head.title : config.title; //6/25/2 by DW
+	const link = (config.link === undefined) ? theOutline.opml.head.link : config.link; 
+	const description = (config.description === undefined) ? theOutline.opml.head.description : config.description;
 	var headElements = { 
-		title: theOutline.opml.head.title,
-		link: theOutline.opml.head.link,
-		description: theOutline.opml.head.description,
+		title,
+		description,
+		link: link,
 		language: "en-us",
 		generator: myProductName + " v" + myVersion,
 		docs: "http://cyber.law.harvard.edu/rss/rss.html",
@@ -120,6 +123,17 @@ function buildPodcast (userConfig, callback) {
 								callback (undefined, config.rssFeedUrl);
 								}
 							});
+						if (config.s3ArchivePath !== undefined) { //6/26/24 by DW
+							const theDate = new Date ();
+							const year = theDate.getFullYear ();
+							const month = utils.padWithZeros (theDate.getMonth () + 1, 2);
+							const s3path = config.s3ArchivePath + year + "/" + month + ".xml";
+							s3.newObject (s3path, xmltext, "text/xml", "public-read", function (err, data) {
+								if (err) {
+									console.log ("buildPodcast: err.message == " + err.message);
+									}
+								});
+							}
 						}
 					});
 				}
