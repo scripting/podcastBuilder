@@ -90,7 +90,8 @@ function buildPodcast (userConfig, callback) {
 	var config = {
 		pathOpmlFile: undefined,
 		s3path: undefined,
-		rssFeedUrl: undefined
+		rssFeedUrl: undefined,
+		flPublishFeed: true //set false for testing -- 7/1/24 by DW
 		};
 	readConfig ("config.json", config, function () {
 		if (userConfig !== undefined) {
@@ -112,27 +113,29 @@ function buildPodcast (userConfig, callback) {
 						}
 					else {
 						var xmltext = outlineToFeed (theOutline, config);
-						console.log (JSON.stringify (theOutline, undefined, 4));
-						s3.newObject (config.s3path, xmltext, "text/xml", "public-read", function (err, data) {
-							if (err) {
-								callback (err);
-								}
-							else {
-								console.log ("config.rssFeedUrl == " + config.rssFeedUrl);
-								rss.cloudPing (undefined, config.rssFeedUrl);
-								callback (undefined, config.rssFeedUrl);
-								}
-							});
-						if (config.s3ArchivePath !== undefined) { //6/26/24 by DW
-							const theDate = new Date ();
-							const year = theDate.getFullYear ();
-							const month = utils.padWithZeros (theDate.getMonth () + 1, 2);
-							const s3path = config.s3ArchivePath + year + "/" + month + ".xml";
-							s3.newObject (s3path, xmltext, "text/xml", "public-read", function (err, data) {
+						console.log (xmltext);
+						if (config.flPublishFeed) { //7/1/24 by DW
+							s3.newObject (config.s3path, xmltext, "text/xml", "public-read", function (err, data) {
 								if (err) {
-									console.log ("buildPodcast: err.message == " + err.message);
+									callback (err);
+									}
+								else {
+									console.log ("config.rssFeedUrl == " + config.rssFeedUrl);
+									rss.cloudPing (undefined, config.rssFeedUrl);
+									callback (undefined, config.rssFeedUrl);
 									}
 								});
+							if (config.s3ArchivePath !== undefined) { //6/26/24 by DW
+								const theDate = new Date ();
+								const year = theDate.getFullYear ();
+								const month = utils.padWithZeros (theDate.getMonth () + 1, 2);
+								const s3path = config.s3ArchivePath + year + "/" + month + ".xml";
+								s3.newObject (s3path, xmltext, "text/xml", "public-read", function (err, data) {
+									if (err) {
+										console.log ("buildPodcast: err.message == " + err.message);
+										}
+									});
+								}
 							}
 						}
 					});
