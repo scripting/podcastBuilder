@@ -1,4 +1,12 @@
-7/10/24; 10:13:44 AM by DW
+#### 7/14/24; 10:06:23 AM by DW
+
+Add a player to the shownotes pages. We already have the url of the enclosure. Why not give them a way to play it too. Nice. 
+
+#### 7/13/24; 9:55:35 AM by DW
+
+New option -- showNotesFolder.
+
+#### 7/10/24; 10:13:44 AM by DW
 
 Why we're using 2024 dates in the Podcast0 feed.
 

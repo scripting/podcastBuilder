@@ -1,0 +1,39 @@
+body {
+	font-family: Ubuntu;
+	font-size: 18px;
+	background-color: whitesmoke;
+	}
+.divPageBody {
+	width: 60%;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 400px;
+	}
+.divPostTime {
+	font-size: 18px;
+	margin-bottom: 25px;
+	}
+.divPostTitle {
+	font-family: "Oswald";
+	font-size: 42px;
+	letter-spacing: -1px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	line-height: 100%;
+	}
+.divPostBody p {
+	list-style-type: none;
+	margin-bottom: .6em;
+	line-height: 140%;
+	}
+.divPostBody audio {
+	margin-top: 1em;
+	border: 1px solid silver;
+	}
+.divFooter {
+	margin-top: 50px;
+	padding-top: .4em;
+	border-top: 1px solid gray;
+	font-size: 14px;
+	}

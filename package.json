@@ -16,6 +16,7 @@
 		"daveutils": "*",
 		"daves3": "*",
 		"opmltojs": "*",
+		"dateformat": "4.5.1",
 		"daverss": "*"
 		}
 	}
