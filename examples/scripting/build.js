@@ -9,6 +9,9 @@ const config = {
 	title: "Scripting News podcast",
 	description: "Podcasts from Dave Winer, editor of the Scripting News blog, since 1994.",
 	link: "https://this.how/scriptingNewsPodcast/",
+	flPublishFeed: true, //7/17/24 by DW
+	showNotesFolder: "/users/davewiner/dropbox/portabledave/publicfolder/shownotes/scripting/", //7/17/24 by DW
+	showNotesFolderUrl: "https://shownotes.scripting.com/scripting/", //7/17/24 by DW
 	itunes: {
 		category: ["Technology", "History", "Business", "Education", "Society & Culture", "Arts"],
 		explicit: "no", //other options ore "yes" and "clean"

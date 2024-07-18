@@ -7,7 +7,7 @@ const config = {
 	rssFeedUrl: "http://scripting.com/podcast0/rss.xml",
 	flPublishFeed: true, //7/10/24 by DW
 	showNotesFolder: "/users/davewiner/dropbox/portabledave/publicfolder/shownotes/podcast0/", //7/13/24 by DW
-	showNotesFolderUrl: "http://scripting.com/publicfolder/shownotes/podcast0/", //7/13/24 by DW
+	showNotesFolderUrl: "https://shownotes.scripting.com/podcast0/", //7/13/24 by DW
 	itunes: {
 		category: ["Technology", "History", "Business", "Education", "Society & Culture", "Arts"],
 		explicit: "no", //other options ore "yes" and "clean"
