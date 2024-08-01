@@ -2,7 +2,7 @@ const utils = require ("daveutils");
 const podcastbuilder = require ("../../podcastbuilder.js");
 
 const config = {
-	pathOpmlFile: "/Users/davewiner/Dropbox/portableDave/publicFolder/scripting/blog.opml",
+	pathOpmlFile: "/Users/davewiner/Dropbox/portableDave/publicFolder/scripting/podcast.opml",
 	s3path: "/scripting.com/podcast.xml",
 	s3ArchivePath: "/scripting.com/podcast/", //6/26/24 by DW
 	rssFeedUrl: "http://scripting.com/podcast.xml",
@@ -25,6 +25,7 @@ const config = {
 		}
 	}
 
+
 podcastbuilder.build (config, function (err, data) {
 	if (err) {
 		console.log (err.message);
@@ -33,4 +34,6 @@ podcastbuilder.build (config, function (err, data) {
 		console.log (data);
 		}
 	});
+
+
 
