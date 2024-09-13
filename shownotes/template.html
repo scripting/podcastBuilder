@@ -4,6 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+		<link rel="alternate" type="application/rss+xml" href="[%rssFeedUrl%]">
 		<script src="//s3.amazonaws.com/scripting.com/code/includes/jquery-1.9.1.min.js"></script>
 <link href="//s3.amazonaws.com/scripting.com/code/includes/bootstrap.css" rel="stylesheet">
 <script src="//s3.amazonaws.com/scripting.com/code/includes/bootstrap.min.js"></script>
@@ -16,8 +17,8 @@
 <script src="//s3.amazonaws.com/scripting.com/code/includes/basic/code.js?x=1"></script>
 <link href="//s3.amazonaws.com/scripting.com/code/includes/basic/styles.css" rel="stylesheet" type="text/css">
 
-		<script src="//s3.amazonaws.com/scripting.com/code/podcastbuilder/shownotes/code.js"></script>
-		<link rel="stylesheet" href="//s3.amazonaws.com/scripting.com/code/podcastbuilder/shownotes/styles.css">
+		<script src="//s3.amazonaws.com/scripting.com/code/podcastbuilder/shownotes/code.js?x=2"></script>
+		<link rel="stylesheet" href="//s3.amazonaws.com/scripting.com/code/podcastbuilder/shownotes/styles.css?x=2">
 		</head>
 	<body>
 		<div class="divPageBody">
@@ -33,6 +34,11 @@
 					<source src="[%enclosure%]" type="audio/mpeg">
 					Your browser does not support the audio element.
 					</audio>
+				</div>
+			<div class="divFeedLink" data-container="body" data-toggle="tooltip" data-placement="right" title="" data-original-title="View the RSS 2.0 feed for this podcast.">
+				<a href="[%rssFeedUrl%]" target="_blank">
+					<div class="divXmlIcon">RSS</div>
+					</a>
 				</div>
 			</div>
 		<script>

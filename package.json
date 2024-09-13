@@ -1,7 +1,7 @@
 {
 	"name": "podcastbuilder",
 	"description": "Turn an outline into a podcast feed",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"main": "podcastbuilder.js",
 	"license": "MIT",
 	"repository": {

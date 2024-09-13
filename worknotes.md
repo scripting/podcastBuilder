@@ -1,3 +1,11 @@
+#### 9/13/24; 10:06:35 AM by DW
+
+Include a link to the RSS feed in the head section of the template for show notes. 
+
+Also include the URL of the show notes folder as a macro, though we aren't using it in the template because we don't put anything at that url. 
+
+Add a white on orange XML icon linking to the feed. 
+
 #### 7/14/24; 10:06:23 AM by DW
 
 Add a player to the shownotes pages. We already have the url of the enclosure. Why not give them a way to play it too. Nice. 

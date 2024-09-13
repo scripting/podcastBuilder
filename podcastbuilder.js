@@ -1,4 +1,4 @@
-var myVersion = "0.4.1", myProductName = "podcastbuilder"; 
+var myVersion = "0.4.2", myProductName = "podcastbuilder";
 
 exports.build = buildPodcast; 
 
@@ -84,7 +84,6 @@ function outlineToFeed (theOutline, config) {
 	var historyArray = new Array ();
 	opmlToJs.visitSubs (theOutline.opml.body.subs, function (item) {
 		if (item.enclosure !== undefined) {
-			console.log (utils.jsonStringify (item));
 			historyArray.push ({
 				title: item.text,
 				link: item.link,
@@ -105,7 +104,7 @@ function outlineToFeed (theOutline, config) {
 	var xmltext = rss.buildRssFeed (headElements, historyArray); 
 	return (xmltext);
 	}
-function buildShowNotes (theOutline, showNotesFolder, showNotesFolderUrl, templateFile) {
+function buildShowNotes (theOutline, showNotesFolder, showNotesFolderUrl, templateFile, rssFeedUrl) {
 	const now = new Date ();
 	fs.readFile (templateFile, function (err, templateText) {
 		if (err) {
@@ -124,6 +123,8 @@ function buildShowNotes (theOutline, showNotesFolder, showNotesFolderUrl, templa
 								postTitle: node.text,
 								postTime: formatDateTime (node.created),
 								enclosure: node.enclosure, //7/14/24 by DW
+								rssFeedUrl, //9/13/24 by DW
+								showNotesFolderUrl //9/13/24 by DW
 								};
 							const pagetext = utils.multipleReplaceAll (templateText.toString (), pagetable, false, "[%", "%]");
 							fs.readFile (f, function (err, oldPagetext) {
@@ -184,7 +185,6 @@ function buildPodcast (userConfig, callback) {
 						}
 					else {
 						var xmltext = outlineToFeed (theOutline, config);
-						console.log (xmltext);
 						if (config.flPublishFeed) { //7/1/24 by DW
 							s3.newObject (config.s3path, xmltext, "text/xml", "public-read", function (err, data) {
 								if (err) {
@@ -209,7 +209,7 @@ function buildPodcast (userConfig, callback) {
 								}
 							}
 						if (config.showNotesFolder !== undefined) { //7/13/24 by DW
-							buildShowNotes (theOutline, config.showNotesFolder, config.showNotesFolderUrl, config.pathTemplateFile);
+							buildShowNotes (theOutline, config.showNotesFolder, config.showNotesFolderUrl, config.pathTemplateFile, config.rssFeedUrl);
 							}
 						}
 					});

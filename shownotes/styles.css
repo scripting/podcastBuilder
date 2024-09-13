@@ -37,3 +37,22 @@ body {
 	border-top: 1px solid gray;
 	font-size: 14px;
 	}
+
+.divFeedLink {
+	margin-top: 35px;
+	width: 36px;
+	height: 14px;
+	background-color: orange;
+	border: 1px solid darkorange;
+	}
+.divFeedLink .divXmlIcon {
+	font-family: "Ubuntu";
+	color: white;
+	font-size: 11px;
+	text-align: center;
+	font-weight: bold;
+	margin-top: -3px;
+	cursor: pointer;
+	}
+
+
