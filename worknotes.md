@@ -1,3 +1,9 @@
+#### 12/4/24; 11:00:50 AM by DW
+
+Added support for <webmaster> in feed, needed by https://www.listennotes.com/rss-viewer/. 
+
+Had the two apps use the podcastbuilder package from NPM, not from the local disk.
+
 #### 9/13/24; 10:06:35 AM by DW
 
 Include a link to the RSS feed in the head section of the template for show notes. 

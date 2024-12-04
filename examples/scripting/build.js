@@ -1,5 +1,5 @@
 const utils = require ("daveutils");
-const podcastbuilder = require ("../../podcastbuilder.js");
+const podcastbuilder = require ("podcastbuilder");
 
 const config = {
 	pathOpmlFile: "/Users/davewiner/Dropbox/portableDave/publicFolder/scripting/podcast.opml",

@@ -1,4 +1,4 @@
-var myVersion = "0.4.2", myProductName = "podcastbuilder";
+var myVersion = "0.4.3", myProductName = "podcastbuilder";
 
 exports.build = buildPodcast; 
 
@@ -64,6 +64,7 @@ function outlineToFeed (theOutline, config) {
 	const title = (config.title === undefined) ? theOutline.opml.head.title : config.title; //6/25/2 by DW
 	const link = (config.link === undefined) ? theOutline.opml.head.link : config.link; 
 	const description = (config.description === undefined) ? theOutline.opml.head.description : config.description;
+	const webmaster = (config.webmaster === undefined) ? theOutline.opml.head.webmaster : config.webmaster; //12/4/24 by DW
 	var headElements = { 
 		title,
 		description,
@@ -79,7 +80,8 @@ function outlineToFeed (theOutline, config) {
 		rssCloudRegisterProcedure: "",
 		rssCloudProtocol: "http-post",
 		image: config.image,
-		itunes: config.itunes
+		itunes: config.itunes,
+		webmaster //12/4/24 by DW
 		};
 	var historyArray = new Array ();
 	opmlToJs.visitSubs (theOutline.opml.body.subs, function (item) {
