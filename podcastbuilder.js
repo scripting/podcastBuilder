@@ -1,4 +1,4 @@
-var myVersion = "0.4.3", myProductName = "podcastbuilder";
+var myVersion = "0.4.8", myProductName = "podcastbuilder";
 
 exports.build = buildPodcast; 
 
@@ -106,6 +106,65 @@ function outlineToFeed (theOutline, config) {
 	var xmltext = rss.buildRssFeed (headElements, historyArray); 
 	return (xmltext);
 	}
+
+function buildIndex (theOutline, showNotesFolder, showNotesFolderUrl, rssFeedUrl, templateFile) { //1/23/26 by DW
+	console.log ("buildIndex");
+	fs.readFile (templateFile, function (err, templateText) {
+		if (err) {
+			console.log ("buildIndex: templateFile == " + templateFile + ", err.message == " + err.message);
+			}
+		else {
+			var htmltext = "", indentlevel = 0;
+			function add (s) {
+				htmltext += s + "\n";
+				}
+			function formatDate (theDate) {
+				const d = new Date (theDate);
+				return (d.getMonth () + 1) + "/" + d.getDate () + "/" + d.getFullYear ();
+				}
+			
+			add ("<table class=\"tableForHomepage\">"); indentlevel++;
+			visitAll (theOutline, function (node) {
+				if (notComment (node)) {
+					if (node.enclosure !== undefined) {
+						const relpath = utils.getDatePath (node.created) + utils.innerCaseName (node.text) + ".html";
+						const link = "<a href=\"" + relpath + "\">" + node.text + "</a>";
+						add ("<tr>"); indentlevel++;
+						add ("<td>" + link + "</td>");
+						add ("<td class=\"tdRight\">&nbsp;" + formatDate (node.created) + "</td>");
+						add ("</tr>"); indentlevel--;
+						}
+					}
+				return (true); //keep visiting
+				});
+			add ("</table>"); indentlevel--;
+			
+			const pagetable = {
+				bodytext: htmltext,
+				postTitle: "List of the podcasts",
+				postTime: formatDateTime (new Date ()),
+				enclosure: "https://s3.amazonaws.com/scripting.com/publicfolder/downloads/podcasts/2026/01/24/theHelloPodcastForScripting.com.m4a", //7/14/24 by DW
+				rssFeedUrl, //9/13/24 by DW
+				showNotesFolderUrl, //9/13/24 by DW
+				homepageLink: "" //2/11/26 by DW
+				};
+			const pagetext = utils.multipleReplaceAll (templateText.toString (), pagetable, false, "[%", "%]");
+			const f = showNotesFolder + "index.html";
+			
+			utils.sureFilePath (f, function () {
+				fs.writeFile (f, pagetext, function (err) {
+					if (err) {
+						console.log ("buildIndex: f == " + f + ", err.message == " + err.message);
+						}
+					else {
+						console.log ("buildIndex: " + showNotesFolderUrl);
+						}
+					});
+			});
+			}
+		});
+	}
+
 function buildShowNotes (theOutline, showNotesFolder, showNotesFolderUrl, templateFile, rssFeedUrl) {
 	const now = new Date ();
 	fs.readFile (templateFile, function (err, templateText) {
@@ -126,7 +185,8 @@ function buildShowNotes (theOutline, showNotesFolder, showNotesFolderUrl, templa
 								postTime: formatDateTime (node.created),
 								enclosure: node.enclosure, //7/14/24 by DW
 								rssFeedUrl, //9/13/24 by DW
-								showNotesFolderUrl //9/13/24 by DW
+								showNotesFolderUrl, //9/13/24 by DW
+								homepageLink: "<a href=\"../../..\" title=\"Click here to see a list of podcasts.\">Shownotes home</a>." //2/11/26 by DW
 								};
 							const pagetext = utils.multipleReplaceAll (templateText.toString (), pagetable, false, "[%", "%]");
 							fs.readFile (f, function (err, oldPagetext) {
@@ -212,6 +272,7 @@ function buildPodcast (userConfig, callback) {
 							}
 						if (config.showNotesFolder !== undefined) { //7/13/24 by DW
 							buildShowNotes (theOutline, config.showNotesFolder, config.showNotesFolderUrl, config.pathTemplateFile, config.rssFeedUrl);
+							buildIndex (theOutline, config.showNotesFolder, config.showNotesFolderUrl, config.rssFeedUrl, config.pathTemplateFile);
 							}
 						}
 					});

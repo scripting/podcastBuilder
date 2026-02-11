@@ -25,6 +25,9 @@ body {
 .divPostBody p {
 	list-style-type: none;
 	margin-bottom: .6em;
+	line-height: 160%;
+	}
+.divPostBody li {
 	line-height: 140%;
 	}
 .divPostBody audio {
@@ -55,4 +58,21 @@ body {
 	cursor: pointer;
 	}
 
+.tableForHomepage {
+	}
+.tableForHomepage td {
+	line-height: 160%;
+	font-size: 18px;
+	}
+.tableForHomepage .tdRight {
+	text-align: right;
+	}
+
+.divHomepageLink { /* 2/11/26 by DW */
+	font-size: 18px;
+	margin-top: 35px;
+	}
+.divHomepageLink a {
+	cursor: pointer;
+	}
 

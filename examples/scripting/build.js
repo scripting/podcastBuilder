@@ -1,5 +1,5 @@
 const utils = require ("daveutils");
-const podcastbuilder = require ("podcastbuilder");
+const podcastbuilder = require ("../../podcastbuilder.js");
 
 const config = {
 	pathOpmlFile: "/Users/davewiner/Dropbox/portableDave/publicFolder/scripting/podcast.opml",
@@ -19,7 +19,7 @@ const config = {
 		type: "episodic" //choices are episodic or serial, episodic is default
 		},
 	image: {
-		url: "http://scripting.com/images/2024/06/25/scriptingNewsPodcastFullImage.png",
+		url: "https://s3.amazonaws.com/scripting.com/images/2024/06/25/scriptingNewsPodcastFullImage.png",
 		title: "Scripting News podcast with Dave Winer.",
 		link: "http://scripting.com/"
 		}

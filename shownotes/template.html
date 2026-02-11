@@ -14,11 +14,74 @@
 <link href="//fonts.googleapis.com/css?family=Ubuntu:400,400i,500i,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
 
-<script src="//s3.amazonaws.com/scripting.com/code/includes/basic/code.js?x=1"></script>
+<script src="//s3.amazonaws.com/scripting.com/code/includes/basic/code.js?x=2"></script>
 <link href="//s3.amazonaws.com/scripting.com/code/includes/basic/styles.css" rel="stylesheet" type="text/css">
 
 		<script src="//s3.amazonaws.com/scripting.com/code/podcastbuilder/shownotes/code.js?x=2"></script>
 		<link rel="stylesheet" href="//s3.amazonaws.com/scripting.com/code/podcastbuilder/shownotes/styles.css?x=2">
+		<script>
+			function startup () {
+				console.log ("startup");
+				hitCounter ();
+				}
+			</script>
+		<style>
+			body {
+				font-family: Ubuntu;
+				font-size: 18px;
+				background-color: whitesmoke;
+				}
+			.divPageBody {
+				width: 60%;
+				margin-top: 50px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 400px;
+				}
+			.divPostTime {
+				font-size: 18px;
+				margin-bottom: 25px;
+				}
+			.divPostTitle {
+				font-family: "Oswald";
+				font-size: 42px;
+				letter-spacing: -1px;
+				font-weight: bold;
+				margin-bottom: 20px;
+				line-height: 100%;
+				}
+			.divPostBody p {
+				list-style-type: none;
+				margin-bottom: .6em;
+				line-height: 160%;
+				}
+			.divPostBody audio {
+				margin-top: 1em;
+				border: 1px solid silver;
+				}
+			.divFooter {
+				margin-top: 50px;
+				padding-top: .4em;
+				border-top: 1px solid gray;
+				font-size: 14px;
+				}
+			.divFeedLink {
+				margin-top: 35px;
+				width: 36px;
+				height: 14px;
+				background-color: orange;
+				border: 1px solid darkorange;
+				}
+			.divFeedLink .divXmlIcon {
+				font-family: "Ubuntu";
+				color: white;
+				font-size: 11px;
+				text-align: center;
+				font-weight: bold;
+				margin-top: -3px;
+				cursor: pointer;
+				}
+			</style>
 		</head>
 	<body>
 		<div class="divPageBody">
@@ -39,6 +102,9 @@
 				<a href="[%rssFeedUrl%]" target="_blank">
 					<div class="divXmlIcon">RSS</div>
 					</a>
+				</div>
+			<div class="divHomepageLink">
+				[%homepageLink%]
 				</div>
 			</div>
 		<script>

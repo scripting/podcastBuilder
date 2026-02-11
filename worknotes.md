@@ -1,6 +1,18 @@
+#### 2/11/26; 9:04:09 AM by DW -- v0.4.8
+
+Add a link to the home page of the podcast at the top of each page in the archive.
+
+#### 1/24/26; 1:22:39 PM by DW -- v0.4.4
+
+Added a <a href="https://shownotes.scripting.com/scripting/">home page</a> for the podcast. Only made to work on main Scripting podcast, though it may work on the other (which we are not maintaining).
+
+#### 1/23/26; 11:52:35 AM by DW
+
+I started to write a buildIndex thing and decided to redirect from the home page to a page on feedland.com.
+
 #### 12/4/24; 11:00:50 AM by DW
 
-Added support for <webmaster> in feed, needed by https://www.listennotes.com/rss-viewer/. 
+Added support for <webmaster> in feed, needed by https://www.listennotes.com/rss-viewer/.
 
 Had the two apps use the podcastbuilder package from NPM, not from the local disk.
 
