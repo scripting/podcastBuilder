@@ -17,8 +17,8 @@
 <script src="//s3.amazonaws.com/scripting.com/code/includes/basic/code.js?x=2"></script>
 <link href="//s3.amazonaws.com/scripting.com/code/includes/basic/styles.css" rel="stylesheet" type="text/css">
 
-		<script src="//s3.amazonaws.com/scripting.com/code/podcastbuilder/shownotes/code.js?x=2"></script>
-		<link rel="stylesheet" href="//s3.amazonaws.com/scripting.com/code/podcastbuilder/shownotes/styles.css?x=2">
+		<script src="//s3.amazonaws.com/scripting.com/code/podcastbuilder/shownotes/code.js?x=3"></script>
+		<link rel="stylesheet" href="//s3.amazonaws.com/scripting.com/code/podcastbuilder/shownotes/styles.css?x=3">
 		<script>
 			function startup () {
 				console.log ("startup");
@@ -85,6 +85,9 @@
 		</head>
 	<body>
 		<div class="divPageBody">
+			<div class="divHomepageLink">
+				[%homepageLink%]
+				</div>
 			<div class="divPostTime">
 				[%postTime%]
 				</div>
@@ -102,9 +105,6 @@
 				<a href="[%rssFeedUrl%]" target="_blank">
 					<div class="divXmlIcon">RSS</div>
 					</a>
-				</div>
-			<div class="divHomepageLink">
-				[%homepageLink%]
 				</div>
 			</div>
 		<script>
