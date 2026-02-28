@@ -2,6 +2,8 @@
 
 Moved the home page link to the top, edited its CSS.
 
+BTW, in the next version we should add OG metadata. 
+
 #### 2/11/26; 9:04:09 AM by DW -- v0.4.8
 
 Add a link to the home page of the podcast at the bottom of each page in the archive.
