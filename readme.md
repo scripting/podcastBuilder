@@ -6,3 +6,5 @@ Includes support for the itunes namespace. The feeds it generates have been acce
 
 I use it to build the Scripting News <a href="http://scripting.com/podcast.xml">podcast-only feed</a> and the podcast0 feed, the stream of the first podcasts I did starting in 2004.
 
+Check out the <a href="worknotes.md">worknotes</a> file for recent updates. 
+

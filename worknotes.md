@@ -1,3 +1,9 @@
+#### 3/29/26; 9:44:33 AM by DW
+
+Improved styling for the home page link.
+
+Included an example OPML file, the one that this podcast is generated from. See the build script for where it's updated in the GitHub repo.
+
 #### 2/27/26; 1:36:54 PM by DW
 
 Moved the home page link to the top, edited its CSS.

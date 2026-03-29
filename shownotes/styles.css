@@ -72,9 +72,12 @@ body {
 	font-size: 18px;
 	margin-top: 35px;
 	margin-bottom: 1em; /* 2/27/26 by DW */
+	
+	font-weight: bold;  /* 3/29/26 by DW */
+	margin-bottom: 2.5em;
 	}
 .divHomepageLink a {
-	color: inherit;
+	color: green; /* 3/29/26 by DW */
 	cursor: pointer;
 	}
 
