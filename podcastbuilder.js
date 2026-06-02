@@ -186,7 +186,7 @@ function buildShowNotes (theOutline, showNotesFolder, showNotesFolderUrl, templa
 								enclosure: node.enclosure, //7/14/24 by DW
 								rssFeedUrl, //9/13/24 by DW
 								showNotesFolderUrl, //9/13/24 by DW
-								homepageLink: "<a href=\"../../..\" title=\"Click here to see a list of podcasts.\">Shownotes home</a>." //2/11/26 by DW
+								homepageLink: "<a href=\"../../..\" title=\"Click here to see a list of podcasts.\"><i class=\"fas fa-home\"></i> Shownotes home</a>." //2/11/26 by DW
 								};
 							const pagetext = utils.multipleReplaceAll (templateText.toString (), pagetable, false, "[%", "%]");
 							fs.readFile (f, function (err, oldPagetext) {

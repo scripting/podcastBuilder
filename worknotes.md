@@ -1,3 +1,13 @@
+#### 6/2/26; 12:53:43 PM by DW
+
+Two changes to the home page link --
+
+it was green, i changed to gray
+
+tried to add a home icon at the end, but it didn't show
+
+have to get back to this later
+
 #### 3/29/26; 9:44:33 AM by DW
 
 Improved styling for the home page link.
